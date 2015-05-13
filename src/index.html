@@ -12,19 +12,24 @@
 		<script src="scripts/site.js"></script>
 	</head>
 	<body>
-		<div class="container">
-			<nav class="navbar navbar-default navbar-static-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<img alt="Brand" src="images/contacts-logo.png">
-					</div>
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<img alt="Brand" src="images/contacts-logo.png">
 				</div>
-			</nav>
+			</div>
+		</nav>
 
+		<div class="container">
 			<div ng-controller="StepController">
-				<p><span class="circle">1</span> - {{ stepName }}</p>
+				<p><span class="circle">{{ stepNumber }}</span> - {{ stepName }}</p>
 				<div class="well well-lg">
-					<h3>Find Your Brand of Contacts</h3>
+					<h3>{{ stepHeader }}</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur mattis turpis, a rhoncus lectus cursus vitae. Vivamus volutpat lorem erat, vitae viverra mi laoreet id. Sed et dui eget tortor sollicitudin malesuada vitae ut erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pharetra ultricies dui non iaculis. Maecenas finibus nunc nulla, et convallis orci pulvinar dictum. Maecenas at euismod diam, ut efficitur leo.
+					</p>
+
+					<product-selector select-product="chooseProduct()"></product-selector>
 				</div>
 			</div>
 		</div>
