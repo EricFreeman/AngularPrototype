@@ -3,6 +3,17 @@
 	padding: 10px;
 }
 
+#fixed-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #FFF;
+}
+
+#main-content {
+	margin-top: 120px;
+}
+
 .circle {
 	display: inline-block;
 	border: 1px solid #6F88D8;

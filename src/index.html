@@ -11,26 +11,28 @@
 		<script src="scripts/angular-route.min.js"></script>
 		<script src="scripts/site.js"></script>
 	</head>
-	<body>
-		<nav class="navbar navbar-default navbar-static-top">
+	<body ng-controller="StepController">
+		<div id="fixed-header">
+			<nav class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<img alt="Brand" src="images/contacts-logo.png">
+					</div>
+
+				</div>
+			</nav>
+
 			<div class="container">
-				<div class="navbar-header">
-					<img alt="Brand" src="images/contacts-logo.png">
-				</div>
+				<p><span class="circle">{{ stepNumber }}</span> - {{ stepName() }}</p>
 			</div>
-		</nav>
+		</div>
 
-		<div class="container">
-			<div ng-controller="StepController">
-				<p><span class="circle">{{ stepNumber }}</span> - {{ stepName }}</p>
-				<div class="well well-lg">
-					<h3>{{ stepHeader }}</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur mattis turpis, a rhoncus lectus cursus vitae. Vivamus volutpat lorem erat, vitae viverra mi laoreet id. Sed et dui eget tortor sollicitudin malesuada vitae ut erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pharetra ultricies dui non iaculis. Maecenas finibus nunc nulla, et convallis orci pulvinar dictum. Maecenas at euismod diam, ut efficitur leo.
-					</p>
+		<div id="main-content" class="container">
+			<div>
 
-					<product-selector select-product="chooseProduct()"></product-selector>
-				</div>
+				<product-selector select-product="chooseProduct(brand)"></product-selector>
+				<eye-options></eye-options>
+
 			</div>
 		</div>
 	</body>
