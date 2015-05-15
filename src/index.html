@@ -11,7 +11,7 @@
 		<script src="scripts/angular-route.min.js"></script>
 		<script src="scripts/site.js"></script>
 	</head>
-	<body ng-controller="StepController">
+	<body ng-controller="MainController">
 		<div id="fixed-header">
 			<nav class="navbar navbar-default navbar-static-top">
 				<div class="container">
@@ -23,7 +23,7 @@
 			</nav>
 
 			<div class="container">
-				<p><span class="circle">{{ stepNumber }}</span> - {{ stepName() }}</p>
+				<p><span class="circle">{{ getStepNumber() }}</span> - {{ getStepName() }}</p>
 			</div>
 		</div>
 
