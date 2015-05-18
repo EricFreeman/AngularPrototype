@@ -9,6 +9,7 @@
 		<script src="scripts/bootstrap.min.js"></script>
 		<script src="scripts/angular.min.js"></script>
 		<script src="scripts/angular-route.min.js"></script>
+		<script src="scripts/angular-animate.min.js"></script>
 		<script src="scripts/site.js"></script>
 	</head>
 	<body ng-controller="MainController">
@@ -31,7 +32,7 @@
 			<div>
 
 				<product-selector select-product="chooseProduct(brand)"></product-selector>
-				<eye-options></eye-options>
+				<eye-options class="animate-show cssFade" ng-show="getStepNumber() > 1"></eye-options>
 
 			</div>
 		</div>

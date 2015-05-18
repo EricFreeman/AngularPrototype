@@ -1,4 +1,4 @@
-var productFlowModule = angular.module('productFlowModule', []);
+var productFlowModule = angular.module('productFlowModule', ['ngAnimate']);
 
 productFlowModule
 	.controller('MainController', ['$scope', 'stepService', function($scope, stepService) {
