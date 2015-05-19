@@ -17,7 +17,7 @@ productFlowModule
 			stepService.incrementStep(1);
 		}
 	}])
-	.service('stepService', function() {
+	.service('stepService', function(animationService) {
 		this.stepNumber = 1;
 
 		this.getStepName = function(stepNumber) {
@@ -33,6 +33,7 @@ productFlowModule
 			if(currentStepNumber == this.stepNumber)
 			{
 				this.stepNumber++;
+				animationService.scrollToLocation('#step' + this.stepNumber);
 			}
 		}
 
@@ -46,6 +47,17 @@ productFlowModule
 			{ stepNumber: 7, stepName: 'Shipping Info', stepHeader: 'Where would you like to ship them?' },
 			{ stepNumber: 8, stepName: 'Billing Info', stepHeader: 'How would you like to pay for them today?' },
 		];
+	})
+	.service('animationService', function($timeout) {
+		this.scrollToLocation = function(id) {
+			var target = $(id);
+			if(target.exists()) {
+				// delay to make sure it exists on the dom by the time you sroll
+				$timeout(function() {
+					$("body").animate({scrollTop: target.offset().top}, "slow");
+				}, 100);
+			}
+		}
 	})
 	.controller('FindMyBrandController', ['$scope', function($scope) {
 		$scope.brands = ['Acuvue', 'Air Optix', 'Avaira', 'Biofinity', 'Biomedics', 'DAILIES', 'Extreme H2O', 'FreshLook', 'Proclear', 'PureVision', 'SoftLens'];
@@ -62,7 +74,7 @@ productFlowModule
    				callback: '&selectProduct'
    			},
 			template: 
-				'<div class="well well-lg">' +
+				'<div class="well well-lg" id="step1">' +
 					'<h3>Find Your Brand of Contacts</h3>' +
 					'<div ng-controller="FindMyBrandController">' +
 						'<span ng-repeat="brand in brands">' +
@@ -75,7 +87,7 @@ productFlowModule
 	.directive('eyeOptions', function() {
 		return {
 			template:
-				'<div class="well well-lg">' +
+				'<div class="well well-lg" id="step2">' +
 					'<h3>Do you wear the same brand of contacts in both eyes?</h3>' +
 					'<div ng-controller="EyeOptionsController">' +
 						'<button type="button" class="btn btn-default" ng-click="selectEye(\'yes\')">yes</button>' +
@@ -84,3 +96,7 @@ productFlowModule
 				'</div>'
 		}
 	});
+
+$.fn.exists = function () {
+    return this.length !== 0;
+}
