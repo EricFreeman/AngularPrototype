@@ -35,3 +35,7 @@
 .cssFade.ng-hide {
     opacity: 0;
 }
+
+hr {
+	border-color: #ccc;
+}
