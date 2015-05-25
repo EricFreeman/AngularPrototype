@@ -19,7 +19,7 @@ productFlowModule
 		}
 
 		this.enterPatientName = function(viewModel) {
-			console.log('patient entered:' + viewModel.firstName + ' ' + viewModel.lastName);
+			console.log('patient entered: ' + viewModel.firstName + ' ' + viewModel.lastName);
 			this.incrementStep(4);
 		}
 
