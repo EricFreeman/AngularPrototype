@@ -17,18 +17,24 @@ productFlowModule
 			stepService.incrementStep(1);
 		}
 	}])
-	.controller('FindMyBrandController', ['$scope', function($scope) {
+	.controller('DirectivesController', ['$scope', 'stepService', function($scope, stepService) {
 		$scope.brands = ['Acuvue', 'Air Optix', 'Avaira', 'Biofinity', 'Biomedics', 'DAILIES', 'Extreme H2O', 'FreshLook', 'Proclear', 'PureVision', 'SoftLens'];
-	}])
-	.controller('EyeOptionsController', ['$scope', 'stepService', function($scope, stepService) {
+
 		$scope.selectEye = function(answer) {
 			stepService.chooseEyeOptions(answer);
 		}
-	}])
-	.controller('EnterPrescriptionsController', ['$scope', 'stepService', function($scope, stepService) {
+
 		$scope.enterPrescription = function() {
 			var viewModel = {};
 			stepService.enterPrescription(viewModel);
+		}
+
+		$scope.enterPatientName = function() {
+			var viewModel = {
+				firstName: 'Gordon',
+				lastName: 'Freeman'
+			};
+			stepService.enterPatientName(viewModel);
 		}
 	}])
 	.directive('productSelector', function() {
@@ -40,7 +46,7 @@ productFlowModule
 			template: 
 				'<div class="well well-lg" id="step1">' +
 					'<h3>Find Your Brand of Contacts</h3>' +
-					'<div ng-controller="FindMyBrandController">' +
+					'<div ng-controller="DirectivesController">' +
 						'<span ng-repeat="brand in brands">' +
 							'<button type="button" class="btn btn-default" ng-click="callback()">{{ brand }}</button>' +
 						'</span>' +
@@ -53,7 +59,7 @@ productFlowModule
 			template:
 				'<div class="well well-lg" id="step2">' +
 					'<h3>Do you wear the same brand of contacts in both eyes?</h3>' +
-					'<div ng-controller="EyeOptionsController">' +
+					'<div ng-controller="DirectivesController">' +
 						'<button type="button" class="btn btn-default" ng-click="selectEye(\'yes\')">Yes</button>' +
 						'<button type="button" class="btn btn-default" ng-click="selectEye(\'no\')">No</button>' +
 					'</div>' +
@@ -65,7 +71,7 @@ productFlowModule
 			template:
 				'<div class="well well-lg" id="step3">' +
 					'<h3>Enter your Rx for your Left Eye</h3>' +
-					'<div ng-controller="EnterPrescriptionsController">' +
+					'<div ng-controller="DirectivesController">' +
 						'<div class="col-md-6">' + 
 							'<h4>Left Eye (OS)</h4>' +
 							'<hr />' +
@@ -75,6 +81,25 @@ productFlowModule
 							'<hr />' +
 						'</div>' +
 						'<button type="button" class="btn btn-default" ng-click="enterPrescription()">Enter</button>' +
+					'</div>' +
+				'</div>'
+		}
+	})
+	.directive('patientName', function() {
+		return {
+			template:
+				'<div class="well well-lg" id="step4">' +
+					'<h3>Who are these for?</h3>' +
+					'<div ng-controller="DirectivesController">' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="First Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Last Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<button type="button" class="btn btn-default" ng-click="enterPatientName()">Enter</button>' +
+						'</div>' +
 					'</div>' +
 				'</div>'
 		}

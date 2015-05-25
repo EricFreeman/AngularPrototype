@@ -18,6 +18,11 @@ productFlowModule
 			this.incrementStep(3);
 		}
 
+		this.enterPatientName = function(viewModel) {
+			console.log('patient entered:' + viewModel.firstName + ' ' + viewModel.lastName);
+			this.incrementStep(4);
+		}
+
 		this.incrementStep = function(currentStepNumber) {
 			if(currentStepNumber == this.stepNumber)
 			{
