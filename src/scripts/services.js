@@ -23,6 +23,23 @@ productFlowModule
 			this.incrementStep(4);
 		}
 
+		this.searchDoctor = function(viewModel) {
+			console.log('doctor searched: ' + viewModel.firstName + ' ' + viewModel.lastName + ' ' + viewModel.phone + ' ' + viewModel.state);
+			this.incrementStep(5);
+		}
+
+		this.selectDoctor = function() {
+			this.incrementStep(6);
+		}
+
+		this.shippingInfo = function() {
+			this.incrementStep(6);
+		}
+
+		this.billingInfo = function() {
+			this.incrementStep(6);
+		}
+
 		this.incrementStep = function(currentStepNumber) {
 			if(currentStepNumber == this.stepNumber)
 			{
@@ -32,14 +49,14 @@ productFlowModule
 		}
 
 		this.stepMap = [
-			{ stepNumber: 1, stepName: 'Find My Brand', stepHeader: 'Find Your Brand of Contacts' },
-			{ stepNumber: 2, stepName: 'Eye Options', stepHeader: 'Do you wear the same brand of contacts in both eyes?' },
-			{ stepNumber: 3, stepName: 'Enter Prescription', stepHeader: 'Enter your Rx for your Left Eye' },
-			{ stepNumber: 4, stepName: 'Patient Name', stepHeader: 'Who are these for?' },
-			{ stepNumber: 5, stepName: 'Search Doctor', stepHeader: 'Which doctor prescribed these contact lenses?' },
-			{ stepNumber: 6, stepName: 'Select Doctor', stepHeader: 'These are the doctors we found:' },
-			{ stepNumber: 7, stepName: 'Shipping Info', stepHeader: 'Where would you like to ship them?' },
-			{ stepNumber: 8, stepName: 'Billing Info', stepHeader: 'How would you like to pay for them today?' },
+			{ stepNumber: 1, stepName: 'Find My Brand' },
+			{ stepNumber: 2, stepName: 'Eye Options' },
+			{ stepNumber: 3, stepName: 'Enter Prescription' },
+			{ stepNumber: 4, stepName: 'Patient Name' },
+			{ stepNumber: 5, stepName: 'Search Doctor' },
+			{ stepNumber: 6, stepName: 'Select Doctor' },
+			{ stepNumber: 7, stepName: 'Shipping Info' },
+			{ stepNumber: 8, stepName: 'Billing Info' },
 		];
 	})
 	.service('animationService', function($timeout) {

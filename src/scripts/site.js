@@ -36,6 +36,29 @@ productFlowModule
 			};
 			stepService.enterPatientName(viewModel);
 		}
+
+		$scope.searchDoctor = function() {
+			var viewModel = {
+				firstName: 'Test',
+				lastName: 'Doctor',
+				phone: '555-555-5555',
+				state: 'UT'
+			}
+
+			stepService.searchDoctor(viewModel);
+		}
+
+		$scope.selectDoctor = function() {
+			stepService.selectDoctor();
+		}
+
+		$scope.shippingInfo = function() {
+			stepService.selectDoctor();
+		}
+
+		$scope.billingInfo = function() {
+			stepService.selectDoctor();
+		}
 	}]);
 
 $.fn.exists = function () {

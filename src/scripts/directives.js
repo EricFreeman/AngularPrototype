@@ -67,4 +67,80 @@ productFlowModule
 					'</div>' +
 				'</div>'
 		}
+	})
+	.directive('searchDoctor', function() {
+		return {
+			template:
+				'<div class="well well-lg" id="step5">' +
+					'<h3>Which doctor prescribed these contact lenses?</h3>' +
+					'<div ng-controller="DirectivesController">' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="First Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Last Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<button type="button" class="btn btn-default" ng-click="searchDoctor()">Search</button>' +
+						'</div>' +
+					'</div>' +
+				'</div>'
+		}
+	})
+	.directive('selectDoctor', function() {
+		return {
+			template:
+				'<div class="well well-lg" id="step6">' +
+					'<h3>These are the doctors we found:</h3>' +
+					'<div ng-controller="DirectivesController">' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="First Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Last Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<button type="button" class="btn btn-default" ng-click="selectDoctor()">Enter</button>' +
+						'</div>' +
+					'</div>' +
+				'</div>'
+		}
+	})
+	.directive('shippingInfo', function() {
+		return {
+			template:
+				'<div class="well well-lg" id="step7">' +
+					'<h3>Where would you like to ship them?</h3>' +
+					'<div ng-controller="DirectivesController">' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="First Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Last Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<button type="button" class="btn btn-default" ng-click="shippingInfo()">Enter</button>' +
+						'</div>' +
+					'</div>' +
+				'</div>'
+		}
+	})
+	.directive('billingInfo', function() {
+		return {
+			template:
+				'<div class="well well-lg" id="step8">' +
+					'<h3>How would you like to pay for them today?</h3>' +
+					'<div ng-controller="DirectivesController">' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="First Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Last Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<button type="button" class="btn btn-default" ng-click="billingInfo()">Enter</button>' +
+						'</div>' +
+					'</div>' +
+				'</div>'
+		}
 	});
