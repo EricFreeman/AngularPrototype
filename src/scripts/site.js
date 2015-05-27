@@ -53,11 +53,11 @@ productFlowModule
 		}
 
 		$scope.shippingInfo = function() {
-			stepService.selectDoctor();
+			stepService.shippingInfo();
 		}
 
 		$scope.billingInfo = function() {
-			stepService.selectDoctor();
+			stepService.billingInfo();
 		}
 	}]);
 

@@ -120,19 +120,11 @@ productFlowModule
 				'<div class="well well-lg" id="step7">' +
 					'<h3>Where would you like to ship them?</h3>' +
 					'<div ng-controller="DirectivesController">' +
+						'<shipping-address-input></shipping-address-input>' +
+						'<h4>Bill to:</h4>' +
+						'<shipping-address-input></shipping-address-input>' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="First Name">' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Last Name">' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<select class="form-control">' +
-								'<option>United States</option>' +
-							'</select>' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<button type="button" class="btn btn-default" ng-click="shippingInfo()">Enter</button>' +
+							'<button type="button" class="btn btn-default" ng-click="shippingInfo()">Continue</button>' +
 						'</div>' +
 					'</div>' +
 				'</div>'
@@ -151,9 +143,43 @@ productFlowModule
 							'<input type="text" class="form-control" placeholder="Last Name">' +
 						'</div>' +
 						'<div class="form-group">' +
-							'<button type="button" class="btn btn-default" ng-click="billingInfo()">Enter</button>' +
+							'<button type="button" class="btn btn-default" ng-click="billingInfo()">Place My Order</button>' +
 						'</div>' +
 					'</div>' +
 				'</div>'
+		}
+	})
+	.directive('shippingAddressInput', function() {
+		return {
+			template:
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="First Name">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="Last Name">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<select class="form-control">' +
+					'<option>United States</option>' +
+				'</select>' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="Street Address 1">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="Street Address 2">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="Zip">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="City">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="State">' +
+			'</div>' +
+			'<div class="form-group">' +
+				'<input type="text" class="form-control" placeholder="Phone">' +
+			'</div>'
 		}
 	});

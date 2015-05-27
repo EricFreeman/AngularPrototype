@@ -33,11 +33,11 @@ productFlowModule
 		}
 
 		this.shippingInfo = function() {
-			this.incrementStep(6);
+			this.incrementStep(7);
 		}
 
 		this.billingInfo = function() {
-			this.incrementStep(6);
+			this.incrementStep(8);
 		}
 
 		this.incrementStep = function(currentStepNumber) {
