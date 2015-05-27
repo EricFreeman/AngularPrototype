@@ -75,10 +75,18 @@ productFlowModule
 					'<h3>Which doctor prescribed these contact lenses?</h3>' +
 					'<div ng-controller="DirectivesController">' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="First Name">' +
+							'<input type="text" class="form-control" placeholder="Doctor/Clinic Name">' +
 						'</div>' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Last Name">' +
+							'<input type="text" class="form-control" placeholder="City">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<select class="form-control">' +
+								'<option>State</option>' +
+							'</select>' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Phone">' +
 						'</div>' +
 						'<div class="form-group">' +
 							'<button type="button" class="btn btn-default" ng-click="searchDoctor()">Search</button>' +
@@ -94,13 +102,13 @@ productFlowModule
 					'<h3>These are the doctors we found:</h3>' +
 					'<div ng-controller="DirectivesController">' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="First Name">' +
+							'<button type="button" class="btn btn-default" ng-click="selectDoctor()">Dr Dude 1</button>' +
 						'</div>' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Last Name">' +
+							'<button type="button" class="btn btn-default" ng-click="selectDoctor()">Dr Dude 2</button>' +
 						'</div>' +
 						'<div class="form-group">' +
-							'<button type="button" class="btn btn-default" ng-click="selectDoctor()">Enter</button>' +
+							'<button type="button" class="btn btn-default" ng-click="selectDoctor()">Dr Dude 3</button>' +
 						'</div>' +
 					'</div>' +
 				'</div>'
@@ -117,6 +125,11 @@ productFlowModule
 						'</div>' +
 						'<div class="form-group">' +
 							'<input type="text" class="form-control" placeholder="Last Name">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<select class="form-control">' +
+								'<option>United States</option>' +
+							'</select>' +
 						'</div>' +
 						'<div class="form-group">' +
 							'<button type="button" class="btn btn-default" ng-click="shippingInfo()">Enter</button>' +
