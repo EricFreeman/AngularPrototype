@@ -120,9 +120,9 @@ productFlowModule
 				'<div class="well well-lg" id="step7">' +
 					'<h3>Where would you like to ship them?</h3>' +
 					'<div ng-controller="DirectivesController">' +
-						'<shipping-address-input></shipping-address-input>' +
+						'<address-input></address-input>' +
 						'<h4>Bill to:</h4>' +
-						'<shipping-address-input></shipping-address-input>' +
+						'<address-input></address-input>' +
 						'<div class="form-group">' +
 							'<button type="button" class="btn btn-default" ng-click="shippingInfo()">Continue</button>' +
 						'</div>' +
@@ -149,7 +149,7 @@ productFlowModule
 				'</div>'
 		}
 	})
-	.directive('shippingAddressInput', function() {
+	.directive('addressInput', function() {
 		return {
 			template:
 			'<div class="form-group">' +
