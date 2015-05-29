@@ -56,10 +56,10 @@ productFlowModule
 					'<h3>Who are these for?</h3>' +
 					'<div ng-controller="DirectivesController">' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="First Name">' +
+							'<input type="text" class="form-control" placeholder="First Name" ng-model="patientFirstName">' +
 						'</div>' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Last Name">' +
+							'<input type="text" class="form-control" placeholder="Last Name" ng-model="patientLastName">' +
 						'</div>' +
 						'<div class="form-group">' +
 							'<button type="button" class="btn btn-default" ng-click="enterPatientName()">Enter</button>' +

@@ -29,10 +29,13 @@ productFlowModule
 			stepService.enterPrescription(viewModel);
 		}
 
+		$scope.patientFirstName = 'Gordon';
+		$scope.patientLastName = 'Freeman';
+
 		$scope.enterPatientName = function() {
 			var viewModel = {
-				firstName: 'Gordon',
-				lastName: 'Freeman'
+				firstName: $scope.patientFirstName,
+				lastName: $scope.patientLastName
 			};
 			stepService.enterPatientName(viewModel);
 		}
