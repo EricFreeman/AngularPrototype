@@ -39,10 +39,12 @@ productFlowModule
 						'<div class="col-md-6">' + 
 							'<h4>Left Eye (OS)</h4>' +
 							'<hr />' +
+							'<eye-params></eye-params>' +
 						'</div>' +
 						'<div class="col-md-6">' + 
 							'<h4>Right Eye (OD)</h4>' +
 							'<hr />' +
+							'<eye-params></eye-params>' +
 						'</div>' +
 						'<button type="button" class="btn btn-default" ng-click="enterPrescription()">Enter</button>' +
 					'</div>' +
@@ -152,34 +154,69 @@ productFlowModule
 	.directive('addressInput', function() {
 		return {
 			template:
-			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="First Name">' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="Last Name">' +
-			'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="First Name">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="Last Name">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<select class="form-control">' +
+						'<option>United States</option>' +
+					'</select>' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="Street Address 1">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="Street Address 2">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="Zip">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="City">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="State">' +
+				'</div>' +
+				'<div class="form-group">' +
+					'<input type="text" class="form-control" placeholder="Phone">' +
+				'</div>'
+		}
+	})
+	.directive('eyeParams', function() {
+		return {
+			template:
 			'<div class="form-group">' +
 				'<select class="form-control">' +
-					'<option>United States</option>' +
+					'<option>Power</option>' +
 				'</select>' +
 			'</div>' +
 			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="Street Address 1">' +
+				'<select class="form-control">' +
+					'<option>BC</option>' +
+				'</select>' +
 			'</div>' +
 			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="Street Address 2">' +
+				'<select class="form-control">' +
+					'<option>DIA</option>' +
+				'</select>' +
 			'</div>' +
 			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="Zip">' +
+				'<select class="form-control">' +
+					'<option>CYL</option>' +
+				'</select>' +
 			'</div>' +
 			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="City">' +
+				'<select class="form-control">' +
+					'<option>Axis</option>' +
+				'</select>' +
 			'</div>' +
 			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="State">' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<input type="text" class="form-control" placeholder="Phone">' +
+				'<select class="form-control">' +
+					'<option>Color</option>' +
+				'</select>' +
 			'</div>'
 		}
 	});
