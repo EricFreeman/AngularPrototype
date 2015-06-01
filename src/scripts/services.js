@@ -5,7 +5,13 @@ productFlowModule
 		this.stepNumber = 1;
 
 		this.getStepName = function(stepNumber) {
-			return this.stepMap[stepNumber - 1].stepName;
+			if(stepNumber <= this.stepMap.length) {
+				return this.stepMap[stepNumber - 1].stepName;
+			}
+			else
+			{
+				return "Order Placed!";
+			}
 		}
 
 		this.chooseEyeOptions = function(answer) {

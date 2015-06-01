@@ -139,10 +139,26 @@ productFlowModule
 					'<h3>How would you like to pay for them today?</h3>' +
 					'<div ng-controller="DirectivesController">' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="First Name">' +
+							'<input type="radio">' +
+							'<span>Credit Card</span>' +
 						'</div>' +
 						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Last Name">' +
+							'<input type="text" class="form-control" placeholder="Card Number">' +
+						'</div>' +
+						'<div class="form-group">' +
+						'<select class="form-control">' +
+							'<option>January</option>' +
+						'</select>' +
+					'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Expiration Date">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="text" class="form-control" placeholder="Name of Card">' +
+						'</div>' +
+						'<div class="form-group">' +
+							'<input type="radio">' +
+							'<span>PayPal</span>' +
 						'</div>' +
 						'<div class="form-group">' +
 							'<button type="button" class="btn btn-default" ng-click="billingInfo()">Place My Order</button>' +
