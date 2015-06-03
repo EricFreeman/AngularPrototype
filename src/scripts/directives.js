@@ -235,4 +235,14 @@ productFlowModule
 				'</select>' +
 			'</div>'
 		}
+	}).
+	directive('contentAsset', function() {
+		return {
+			restrict: 'E',
+			scope: {
+				id: "@oid"
+			},
+			template:
+				'<div ng-controller="ContentAssetController" ng-bind-html-unsafe="ajaxData" ng-init="load(id)"></div>'
+		}
 	});

@@ -62,6 +62,16 @@ productFlowModule
 		$scope.billingInfo = function() {
 			stepService.billingInfo();
 		}
+	}])
+	.controller('ContentAssetController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+		$scope.ajaxData = '<p>loading...</p>';
+
+		$scope.load = function(contentAsset) {
+			$http.get('http://dev01-ecom2-1800contacts.demandware.net/on/demandware.store/Sites-1800contacts-Site/default/Api-GetContentSlot?contentAsset=' + contentAsset)
+			.success(function(data, status, headers, config) {
+				$scope.ajaxData = data;
+			})
+		}
 	}]);
 
 $.fn.exists = function () {
