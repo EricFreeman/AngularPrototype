@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="productFlowModule">
+	<head>
+		<meta charset="utf-8">
+		<title>Angular Prototype</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="scripts/jquery-1.11.3.min.js"></script>
+		<script src="scripts/bootstrap.min.js"></script>
+		<script src="scripts/angular.min.js"></script>
+		<script src="scripts/angular-route.min.js"></script>
+		<script src="scripts/site.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-default navbar-static-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<img alt="Brand" src="images/contacts-logo.png">
+					</div>
+				</div>
+			</nav>
+
+			<div ng-controller="StepController">
+				<p><span class="circle">1</span> - {{ stepName }}</p>
+				<div class="well well-lg">
+					<h3>Find Your Brand of Contacts</h3>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

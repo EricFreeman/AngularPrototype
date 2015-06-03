@@ -1,0 +1,13 @@
+.navbar-default {
+	background-color: #17237f;
+	padding: 10px;
+}
+
+.circle {
+	display: inline-block;
+	border: 1px solid #6F88D8;
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+	padding-left: 5px;
+}
