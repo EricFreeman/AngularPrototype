@@ -169,36 +169,7 @@ productFlowModule
 	})
 	.directive('addressInput', function() {
 		return {
-			template:
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="First Name">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="Last Name">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<select class="form-control">' +
-						'<option>United States</option>' +
-					'</select>' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="Street Address 1">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="Street Address 2">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="Zip">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="City">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="State">' +
-				'</div>' +
-				'<div class="form-group">' +
-					'<input type="text" class="form-control" placeholder="Phone">' +
-				'</div>'
+			templateUrl: '../templates/addressInput.html'
 		}
 	})
 	.directive('eyeParams', function() {
