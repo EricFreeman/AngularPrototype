@@ -1,5 +1,3 @@
-var productFlowModule = angular.module('productFlowModule');
-
 productFlowModule
 	.service('stepService', function(animationService) {
 		this.stepNumber = 1;
