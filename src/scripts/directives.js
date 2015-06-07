@@ -118,53 +118,12 @@ productFlowModule
 	})
 	.directive('shippingInfo', function() {
 		return {
-			template:
-				'<div class="well well-lg" id="step7">' +
-					'<h3>Where would you like to ship them?</h3>' +
-					'<div ng-controller="DirectivesController">' +
-						'<address-input></address-input>' +
-						'<h4>Bill to:</h4>' +
-						'<address-input></address-input>' +
-						'<div class="form-group">' +
-							'<button type="button" class="btn btn-default" ng-click="shippingInfo()">Continue</button>' +
-						'</div>' +
-					'</div>' +
-				'</div>'
+			templateUrl: '../templates/shippingInfo.html'
 		}
 	})
 	.directive('billingInfo', function() {
 		return {
-			template:
-				'<div class="well well-lg" id="step8">' +
-					'<h3>How would you like to pay for them today?</h3>' +
-					'<div ng-controller="DirectivesController">' +
-						'<div class="form-group">' +
-							'<input type="radio">' +
-							'<span>Credit Card</span>' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Card Number">' +
-						'</div>' +
-						'<div class="form-group">' +
-						'<select class="form-control">' +
-							'<option>January</option>' +
-						'</select>' +
-					'</div>' +
-						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Expiration Date">' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<input type="text" class="form-control" placeholder="Name of Card">' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<input type="radio">' +
-							'<span>PayPal</span>' +
-						'</div>' +
-						'<div class="form-group">' +
-							'<button type="button" class="btn btn-default" ng-click="billingInfo()">Place My Order</button>' +
-						'</div>' +
-					'</div>' +
-				'</div>'
+			templateUrl: '../templates/billingInfo.html'
 		}
 	})
 	.directive('addressInput', function() {
@@ -174,37 +133,7 @@ productFlowModule
 	})
 	.directive('eyeParams', function() {
 		return {
-			template:
-			'<div class="form-group">' +
-				'<select class="form-control">' +
-					'<option>Power</option>' +
-				'</select>' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<select class="form-control">' +
-					'<option>BC</option>' +
-				'</select>' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<select class="form-control">' +
-					'<option>DIA</option>' +
-				'</select>' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<select class="form-control">' +
-					'<option>CYL</option>' +
-				'</select>' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<select class="form-control">' +
-					'<option>Axis</option>' +
-				'</select>' +
-			'</div>' +
-			'<div class="form-group">' +
-				'<select class="form-control">' +
-					'<option>Color</option>' +
-				'</select>' +
-			'</div>'
+			templateUrl: '../templates/eyeParams.html'
 		}
 	}).
 	directive('contentAsset', function() {
