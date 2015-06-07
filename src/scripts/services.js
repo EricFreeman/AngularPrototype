@@ -12,6 +12,11 @@ productFlowModule
 			}
 		}
 
+		this.chooseProduct = function() {
+			console.log('product chosen');
+			this.incrementStep(1);
+		}
+
 		this.chooseEyeOptions = function(answer) {
 			console.log('eye options chosen: ' + answer);
 			this.incrementStep(2);

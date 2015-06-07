@@ -3,10 +3,6 @@ var productFlowModule = angular.module('productFlowModule');
 productFlowModule
 	.directive('productSelector', function() {
 		return {
-   			restrict: 'E',
-   			scope: {
-   				callback: '&selectProduct'
-   			},
 			templateUrl: '../templates/productSelector.html'
 		}
 	})

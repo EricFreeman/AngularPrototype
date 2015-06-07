@@ -13,6 +13,7 @@
 		<script src="scripts/site.js"></script>
 		<script src="scripts/services.js"></script>
 		<script src="scripts/directives.js"></script>
+		<script src="scripts/MainController.js"></script>
 	</head>
 	<body ng-controller="MainController">
 		<div id="fixed-header">
@@ -33,7 +34,7 @@
 		<div id="main-content" class="container">
 			<div>
 
-				<product-selector select-product="chooseProduct()"></product-selector>
+				<product-selector></product-selector>
 				<eye-options class="animate-show cssFade" ng-show="getStepNumber() > 1"></eye-options>
 				<enter-prescription class="animate-show cssFade" ng-show="getStepNumber() > 2"></enter-prescription>
 				<patient-name class="animate-show cssFade" ng-show="getStepNumber() > 3"></patient-name>
