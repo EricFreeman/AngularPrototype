@@ -1,6 +1,6 @@
-<div class="well well-lg" id="step2">
+<div class="well well-lg" id="step2" ng-controller="EyeOptionsController" ng-show="hasSelectedBrand()">
 	<h3>Do you wear the same brand of contacts in both eyes?</h3>
-	<div ng-controller="DirectivesController">
+	<div>
 		<button type="button" class="btn btn-default" ng-click="selectEye('yes')">Yes</button>
 		<button type="button" class="btn btn-default" ng-click="selectEye('no')">No</button>
 	</div>

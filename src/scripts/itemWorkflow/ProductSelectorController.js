@@ -1,7 +1,8 @@
 var productFlowModule = angular.module('productFlowModule');
 
 productFlowModule
-	.controller('ProductSelectorController', ['$scope', 'stepService', function($scope, stepService) {
+	.controller('ProductSelectorController', ['$scope', 'stepService', 'itemWorkflowService', function($scope, stepService, itemWorkflowService) {
+		$scope.itemWorkflowService = itemWorkflowService;
 		$scope.brands = [];
 
 		$scope.init = function() {
@@ -9,7 +10,9 @@ productFlowModule
 			$scope.brands = ['Acuvue', 'Air Optix', 'Avaira', 'Biofinity', 'Biomedics', 'DAILIES', 'Extreme H2O', 'FreshLook', 'Proclear', 'PureVision', 'SoftLens'];
 		}
 
-		$scope.chooseProduct = function() {
+		$scope.chooseProduct = function(product) {
+			itemWorkflowService.brand = product;
+			itemWorkflowService.hasSelectedBrand = true;
 			stepService.chooseProduct();
 		}
 	}]);

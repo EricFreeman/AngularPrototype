@@ -2,7 +2,7 @@
 	<h3>Find Your Brand of Contacts</h3>
 	<div ng-controller="ProductSelectorController" ng-init="init()">
 		<span ng-repeat="brand in brands">
-			<button type="button" class="btn btn-default" ng-click="chooseProduct()">{{ brand }}</button>
+			<button type="button" class="btn btn-default" ng-click="chooseProduct(brand)">{{ brand }}</button>
 		</span>
 	</div>
 </div>

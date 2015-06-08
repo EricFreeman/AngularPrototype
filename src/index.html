@@ -16,6 +16,7 @@
 		<script src="scripts/MainController.js"></script>
 		<script src="scripts/itemWorkflow/itemWorkflowService.js"></script>
 		<script src="scripts/itemWorkflow/ProductSelectorController.js"></script>
+		<script src="scripts/itemWorkflow/EyeOptionsController.js"></script>
 	</head>
 	<body ng-controller="MainController">
 		<div id="fixed-header">
@@ -37,7 +38,7 @@
 			<div>
 
 				<product-selector></product-selector>
-				<eye-options class="animate-show cssFade" ng-show="getStepNumber() > 1"></eye-options>
+				<eye-options class="animate-show cssFade"></eye-options>
 				<enter-prescription class="animate-show cssFade" ng-show="getStepNumber() > 2"></enter-prescription>
 				<patient-name class="animate-show cssFade" ng-show="getStepNumber() > 3"></patient-name>
 				<search-doctor class="animate-show cssFade" ng-show="getStepNumber() > 4"></search-doctor>

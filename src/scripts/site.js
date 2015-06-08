@@ -2,12 +2,6 @@ var productFlowModule = angular.module('productFlowModule', ['ngAnimate']);
 
 productFlowModule
 	.controller('DirectivesController', ['$scope', 'stepService', function($scope, stepService) {
-		$scope.brands = ['Acuvue', 'Air Optix', 'Avaira', 'Biofinity', 'Biomedics', 'DAILIES', 'Extreme H2O', 'FreshLook', 'Proclear', 'PureVision', 'SoftLens'];
-
-		$scope.selectEye = function(answer) {
-			stepService.chooseEyeOptions(answer);
-		}
-
 		$scope.enterPrescription = function() {
 			var viewModel = {};
 			stepService.enterPrescription(viewModel);
