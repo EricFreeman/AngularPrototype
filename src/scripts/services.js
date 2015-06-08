@@ -78,4 +78,4 @@ productFlowModule
 				}, 100);
 			}
 		}
-	})
+	});

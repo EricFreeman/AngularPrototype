@@ -1,6 +1,6 @@
 <div class="well well-lg" id="step1">
 	<h3>Find Your Brand of Contacts</h3>
-	<div ng-controller="DirectivesController">
+	<div ng-controller="ProductSelectorController" ng-init="init()">
 		<span ng-repeat="brand in brands">
 			<button type="button" class="btn btn-default" ng-click="chooseProduct()">{{ brand }}</button>
 		</span>

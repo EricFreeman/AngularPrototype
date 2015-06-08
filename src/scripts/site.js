@@ -4,10 +4,6 @@ productFlowModule
 	.controller('DirectivesController', ['$scope', 'stepService', function($scope, stepService) {
 		$scope.brands = ['Acuvue', 'Air Optix', 'Avaira', 'Biofinity', 'Biomedics', 'DAILIES', 'Extreme H2O', 'FreshLook', 'Proclear', 'PureVision', 'SoftLens'];
 
-		$scope.chooseProduct = function() {
-			stepService.chooseProduct();
-		}
-
 		$scope.selectEye = function(answer) {
 			stepService.chooseEyeOptions(answer);
 		}
