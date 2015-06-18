@@ -1,13 +1,15 @@
 var productFlowModule = angular.module('productFlowModule');
 
 productFlowModule
-	.controller('ProductSelectorController', ['$scope', 'stepService', 'itemWorkflowService', function($scope, stepService, itemWorkflowService) {
+	.controller('ProductSelectorController', ['$scope', '$http', 'stepService', 'itemWorkflowService', function($scope, $http, stepService, itemWorkflowService) {
 		$scope.itemWorkflowService = itemWorkflowService;
 		$scope.brands = [];
 
 		$scope.init = function() {
-			// make service call to load brands/product list here
-			$scope.brands = ['Acuvue', 'Air Optix', 'Avaira', 'Biofinity', 'Biomedics', 'DAILIES', 'Extreme H2O', 'FreshLook', 'Proclear', 'PureVision', 'SoftLens'];
+			$http.get('http://localhost:1337/api/Products/GetInitialState')
+			.success(function(data) {
+				$scope.brands = data.MostPopularProducts.map(function(product) { return product.Name; });
+			});
 		}
 
 		$scope.chooseProduct = function(product) {
