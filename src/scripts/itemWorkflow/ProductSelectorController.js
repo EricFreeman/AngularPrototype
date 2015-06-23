@@ -8,13 +8,25 @@ productFlowModule
 		$scope.init = function() {
 			$http.get('http://localhost:1337/api/Products/GetInitialState')
 			.success(function(data) {
-				$scope.brands = data.MostPopularProducts.map(function(product) { return product.Name; });
+				var brands = [{
+					name: 'Most Popular Products',
+					products: data.MostPopularProducts
+				}];
+				for(var brandName in data.Brands) {
+					var brand = data.Brands[brandName];
+					brands.push({
+						name: brand.Name,
+						products: brand.Products
+					})
+				}
+
+				$scope.brands = brands;
 			});
 		}
 
 		$scope.chooseProduct = function(product) {
 			itemWorkflowService.brand = product;
-			itemWorkflowService.hasSelectedBrand = true;
+			itemWorkflowService.hasSelectedProduct = true;
 			stepService.chooseProduct();
 		}
 	}]);

@@ -1,8 +1,13 @@
 <div class="well well-lg" id="step1">
 	<h3>Find Your Brand of Contacts</h3>
 	<div ng-controller="ProductSelectorController" ng-init="init()">
-		<span ng-repeat="brand in brands">
-			<button type="button" class="btn btn-default" ng-click="chooseProduct(brand)">{{ brand }}</button>
-		</span>
+		<div ng-repeat="brand in brands">
+			<span>{{ brand.name }}</span>
+			<br />
+			<a href="#" ng-repeat="product in brand.products" ng-click="chooseProduct(product)">
+				<img ng-src="{{product.Images[0].SmallUrl}}" />
+				<span> {{ product.Name }} </span>
+			</a>
+		</div>
 	</div>
 </div>
