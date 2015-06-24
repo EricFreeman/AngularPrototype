@@ -1,13 +1,12 @@
 var productFlowModule = angular.module('productFlowModule');
 
 productFlowModule
-	.controller('ProductSelectorController', ['$scope', '$http', 'stepService', 'itemWorkflowService', function($scope, $http, stepService, itemWorkflowService) {
+	.controller('ProductSelectorController', ['$scope', 'stepService', 'itemWorkflowService', 'demonwareService', function($scope, stepService, itemWorkflowService, demonwareService) {
 		$scope.itemWorkflowService = itemWorkflowService;
 		$scope.brands = [];
 
 		$scope.init = function() {
-			$http.get('http://localhost:1337/api/Products/GetInitialState')
-			.success(function(data) {
+			demonwareService.getInitialState(function(data) {
 				var brands = [{
 					name: 'Most Popular Products',
 					products: data.MostPopularProducts
@@ -28,5 +27,9 @@ productFlowModule
 			itemWorkflowService.brand = product;
 			itemWorkflowService.hasSelectedProduct = true;
 			stepService.chooseProduct();
+
+			demonwareService.getProduct(product.Id, function(data) {
+				console.log(data);
+			});
 		}
 	}]);

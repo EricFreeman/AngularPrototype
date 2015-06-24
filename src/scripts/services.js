@@ -78,4 +78,29 @@ productFlowModule
 				}, 100);
 			}
 		}
+	})
+	.service('demonwareService', function($http) {
+		this.host = 'http://localhost:1337/api/';
+
+		this.getInitialState = function(callback) {
+			this.get('Products/GetInitialState', callback);
+		}
+
+		this.getProduct = function(productId, callback) {
+			this.post('Products/GetProduct/' + productId, null, callback);
+		}
+
+		this.get = function(endpoint, callback) {
+			$http.get(this.host + endpoint)
+			.success(function(data) {
+				callback(data);
+			});
+		}
+
+		this.post = function(endpoint, body, callback) {
+			$http.post(this.host + endpoint, body)
+			.success(function(data) {
+				callback(data);
+			});
+		}
 	});
