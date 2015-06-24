@@ -24,12 +24,10 @@ productFlowModule
 		}
 
 		$scope.chooseProduct = function(product) {
-			itemWorkflowService.brand = product;
-			itemWorkflowService.hasSelectedProduct = true;
-			stepService.chooseProduct();
-
 			demonwareService.getProduct(product.id, function(data) {
-				console.log(data);
+				itemWorkflowService.product = data.result;
+				itemWorkflowService.hasSelectedProduct = true;
+				stepService.chooseProduct();
 			});
 		}
 	}]);

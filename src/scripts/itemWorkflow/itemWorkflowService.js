@@ -2,7 +2,7 @@ var productFlowModule = angular.module('productFlowModule');
 
 productFlowModule
 	.service('itemWorkflowService', function() {
-		this.brand = {};
+		this.product = {};
 		this.hasSelectedProduct = false;
 		this.isSameProductInBothEyes = null;
 

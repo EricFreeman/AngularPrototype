@@ -1,15 +1,27 @@
 <div class="well well-lg" id="step3">
 	<h3>Enter your Rx for your Left Eye</h3>
-	<div ng-controller="DirectivesController">
+	<div ng-controller="EnterPrescriptionController">
 		<div class="col-md-6"> 
 			<h4>Left Eye (OS)</h4>
 			<hr />
-			<eye-params></eye-params>
+
+			<div class="form-group" ng-repeat="(key, prop) in itemWorkflowService.product.dimensions">
+				<span>{{ itemWorkflowService.product.dimensions[key].name }}</span>
+				<select class="form-control">
+					<option ng-repeat="option in itemWorkflowService.product.dimensions[key].options">{{ option }}</option>
+				</select>
+			</div>
 		</div>
 		<div class="col-md-6"> 
 			<h4>Right Eye (OD)</h4>
 			<hr />
-			<eye-params></eye-params>
+
+			<div class="form-group" ng-repeat="(key, prop) in itemWorkflowService.product.dimensions">
+				<span>{{ itemWorkflowService.product.dimensions[key].name }}</span>
+				<select class="form-control">
+					<option ng-repeat="option in itemWorkflowService.product.dimensions[key].options">{{ option }}</option>
+				</select>
+			</div>
 		</div>
 		<button type="button" class="btn btn-default" ng-click="enterPrescription()">Enter</button>
 	</div>

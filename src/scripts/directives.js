@@ -46,12 +46,7 @@ productFlowModule
 			templateUrl: '../templates/addressInput.html'
 		}
 	})
-	.directive('eyeParams', function() {
-		return {
-			templateUrl: '../templates/eyeParams.html'
-		}
-	}).
-	directive('contentAsset', function() {
+	.directive('contentAsset', function() {
 		return {
 			restrict: 'E',
 			scope: {
