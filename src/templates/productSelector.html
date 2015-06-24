@@ -5,8 +5,8 @@
 			<span>{{ brand.name }}</span>
 			<br />
 			<a href="#" ng-repeat="product in brand.products" ng-click="chooseProduct(product)">
-				<img ng-src="{{product.Images[0].SmallUrl}}" />
-				<span> {{ product.Name }} </span>
+				<img ng-src="{{product.images[0].smallUrl}}" />
+				<span> {{ product.name }} </span>
 			</a>
 		</div>
 	</div>

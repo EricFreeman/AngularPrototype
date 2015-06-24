@@ -11,11 +11,11 @@ productFlowModule
 					name: 'Most Popular Products',
 					products: data.MostPopularProducts
 				}];
-				for(var brandName in data.Brands) {
-					var brand = data.Brands[brandName];
+				for(var brandName in data.brands) {
+					var brand = data.brands[brandName];
 					brands.push({
-						name: brand.Name,
-						products: brand.Products
+						name: brand.name,
+						products: brand.products
 					})
 				}
 
@@ -28,7 +28,7 @@ productFlowModule
 			itemWorkflowService.hasSelectedProduct = true;
 			stepService.chooseProduct();
 
-			demonwareService.getProduct(product.Id, function(data) {
+			demonwareService.getProduct(product.id, function(data) {
 				console.log(data);
 			});
 		}
