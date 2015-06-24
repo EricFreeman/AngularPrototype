@@ -7,7 +7,7 @@
 
 			<div class="form-group" ng-repeat="(key, prop) in itemWorkflowService.product.dimensions">
 				<span>{{ key }}</span>
-				<select class="form-control" ng-model="leftEyeDimensions[key]" ng-init="leftEyeDimensions[key] = prop.options[0]">
+				<select class="form-control" ng-model="leftEyeDimensions[key]">
 					<option ng-repeat="option in prop.options">{{ option }}</option>
 				</select>
 			</div>
@@ -18,7 +18,7 @@
 
 			<div class="form-group" ng-repeat="(key, prop) in itemWorkflowService.product.dimensions">
 				<span>{{ key }}</span>
-				<select class="form-control" ng-model="rightEyeDimensions[key]" ng-init="rightEyeDimensions[key] = prop.options[0]">
+				<select class="form-control" ng-model="rightEyeDimensions[key]">
 					<option ng-repeat="option in prop.options" >{{ option }}</option>
 				</select>
 			</div>
