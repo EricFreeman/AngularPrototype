@@ -9,7 +9,7 @@ productFlowModule
 			demonwareService.getInitialState(function(data) {
 				var brands = [{
 					name: 'Most Popular Products',
-					products: data.MostPopularProducts
+					products: data.mostPopularProducts
 				}];
 				for(var brandName in data.brands) {
 					var brand = data.brands[brandName];
