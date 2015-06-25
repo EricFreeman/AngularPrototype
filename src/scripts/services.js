@@ -1,5 +1,5 @@
 productFlowModule
-	.service('stepService', function(animationService) {
+	.service('stepService', function(animationService, $rootScope) {
 		this.stepNumber = 1;
 
 		this.getStepName = function(stepNumber) {
@@ -10,6 +10,10 @@ productFlowModule
 			{
 				return "Order Placed!";
 			}
+		}
+
+		this.getStep = function(stepNumber) {
+			return this.stepMap[stepNumber - 1];
 		}
 
 		this.chooseProduct = function() {
@@ -53,30 +57,31 @@ productFlowModule
 			if(currentStepNumber == this.stepNumber)
 			{
 				this.stepNumber++;
+				$rootScope.$broadcast('loadNextStep');
 				animationService.scrollToLocation('#step' + this.stepNumber);
 			}
 		}
 
 		this.stepMap = [
-			{ stepNumber: 1, stepName: 'Find My Brand' },
-			{ stepNumber: 2, stepName: 'Eye Options' },
-			{ stepNumber: 3, stepName: 'Enter Prescription' },
-			{ stepNumber: 4, stepName: 'Patient Name' },
-			{ stepNumber: 5, stepName: 'Search Doctor' },
-			{ stepNumber: 6, stepName: 'Select Doctor' },
-			{ stepNumber: 7, stepName: 'Shipping Info' },
-			{ stepNumber: 8, stepName: 'Billing Info' },
+			{ stepNumber: 1, directiveName: 'product-selector', stepName: 'Find My Brand' },
+			{ stepNumber: 2, directiveName: 'eye-options', stepName: 'Eye Options' },
+			{ stepNumber: 3, directiveName: 'enter-prescription', stepName: 'Enter Prescription' },
+			{ stepNumber: 4, directiveName: 'patient-name', stepName: 'Patient Name' },
+			{ stepNumber: 5, directiveName: 'search-doctor', stepName: 'Search Doctor' },
+			{ stepNumber: 6, directiveName: 'select-doctor', stepName: 'Select Doctor' },
+			{ stepNumber: 7, directiveName: 'shipping-info', stepName: 'Shipping Info' },
+			{ stepNumber: 8, directiveName: 'billing-info', stepName: 'Billing Info' },
 		];
 	})
 	.service('animationService', function($timeout) {
 		this.scrollToLocation = function(id) {
-			var target = $(id);
-			if(target.exists()) {
-				// delay to make sure it exists on the dom by the time you sroll
-				$timeout(function() {
+			// delay to make sure it exists on the dom by the time you sroll
+			$timeout(function() {
+				var target = $(id);
+				if(target.exists()) {
 					$("body").animate({scrollTop: target.offset().top}, "slow");
-				}, 100);
-			}
+				}
+			}, 100);
 		}
 	})
 	.service('demonwareService', function($http) {
