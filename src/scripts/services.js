@@ -58,7 +58,7 @@ productFlowModule
 			{
 				this.stepNumber++;
 				$rootScope.$broadcast('loadNextStep');
-				animationService.scrollToLocation('#step' + this.stepNumber);
+				animationService.scrollToLocation(this.getStep(this.stepNumber).directiveName);
 			}
 		}
 

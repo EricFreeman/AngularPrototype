@@ -15,6 +15,6 @@ productFlowModule
 			var template = angular.element(document.createElement(step.directiveName)),
 				compiled = $compile(template)($scope);
 				
-			angular.element('#step' + (stepService.stepNumber - 1)).parent().after(compiled);
+			angular.element('#itemSelectionContainer').append(compiled);
 		});
 	}]);
