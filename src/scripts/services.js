@@ -63,14 +63,14 @@ productFlowModule
 		}
 
 		this.stepMap = [
-			{ stepNumber: 1, directiveName: 'product-selector', stepName: 'Find My Brand' },
-			{ stepNumber: 2, directiveName: 'eye-options', stepName: 'Eye Options' },
-			{ stepNumber: 3, directiveName: 'enter-prescription', stepName: 'Enter Prescription' },
-			{ stepNumber: 4, directiveName: 'patient-name', stepName: 'Patient Name' },
-			{ stepNumber: 5, directiveName: 'search-doctor', stepName: 'Search Doctor' },
-			{ stepNumber: 6, directiveName: 'select-doctor', stepName: 'Select Doctor' },
-			{ stepNumber: 7, directiveName: 'shipping-info', stepName: 'Shipping Info' },
-			{ stepNumber: 8, directiveName: 'billing-info', stepName: 'Billing Info' },
+			{ directiveName: 'product-selector', stepName: 'Find My Brand' },
+			{ directiveName: 'eye-options', stepName: 'Eye Options' },
+			{ directiveName: 'enter-prescription', stepName: 'Enter Prescription' },
+			{ directiveName: 'patient-name', stepName: 'Patient Name' },
+			{ directiveName: 'search-doctor', stepName: 'Search Doctor' },
+			{ directiveName: 'select-doctor', stepName: 'Select Doctor' },
+			{ directiveName: 'shipping-info', stepName: 'Shipping Info' },
+			{ directiveName: 'billing-info', stepName: 'Billing Info' },
 		];
 	})
 	.service('animationService', function($timeout) {
